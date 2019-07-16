@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="scripts.js" defer></script>
+    <title>Registration form</title>
+</head>
+
+<body>
+    <button id="log-in">Log <strong>In</strong></button>
+    <div class="center">
+        <section class="grid-container">
+            <aside class="grid-container-left">
+                <h2 class="grid-container-left-toggle" data="per-info" >Personal Information</h2>
+                <h2 class="grid-container-left-toggle" data="del-info" >Delivery Information</h2>
+                <h2 class="grid-container-left-toggle" data="pay-info" >Payment Information</h2>
+            </aside>
+            <aside class="grid-container-right">
+                
+                <!-- Personal Information -->
+
+                <form action="" class="registration-form registration-form-open" id="per-info">
+                    <h1><strong>Personal</strong>Information</h1>
+                    <p>Please enter your information and proceed to the next step so we can build your accounts</p>
+
+                    <!-- Name and Surname -->
+
+                    <div class="personal-info__name-and-surname">
+                        <input type="text" class="margin-right" id="input" placeholder="First name" title="Name"
+                            required>
+                        <input type="text" placeholder="Last name" title="Surname" required>
+                    </div>
+
+                    <!-- Email -->
+
+                    <div class="personal-info__email">
+                        <label for="email">Email</label>
+                        <input type="email" placeholder="brooklyn@example.com" required>
+                    </div>
+
+                    <!-- Bday -->
+
+                    <div class="personal-info__bday">
+                        <label for="bday">Birh Date</label>
+                        <input type="date" name="bday" id="bday">
+                    </div>
+
+                    <!-- Password -->
+
+                    <div class="personal-info__password">
+                        <input type="password" id="password" class="margin-right" placeholder="Password" pattern="[0-9]{4}" required>
+                        <input type="password" id="confirmPassword" placeholder="Confirm Password" pattern="[0-9]{4}" required>
+                    </div>
+
+                    <!-- Button -->
+
+                    <div class="personal-info__button">
+                        <button type="button" class="personal-info__button-next" data="del-info">Next</button>
+                    </div>
+                </form>
+
+                <!-- Delivery Information -->
+
+                <form action="" class="registration-form" id="del-info">
+                    <h1><strong>Delivery</strong>Information</h1>
+                    <p>Please enter your information and proceed to the next step so we can build your accounts</p>
+
+                    <!-- Phone Number -->
+
+                    <div class="delivery-info__phone">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" pattern="[\+]{1}[0-9]{2}[0-9]{3}[0-9]{3}[0-9]{3}"
+                            placeholder="+48123456789" required>
+                    </div>
+
+                    <!-- Country -->
+
+                    <div class="delivery-info__country">
+                        <input type="text" list="countries" name="countries" placeholder="Country" required>
+                        <datalist id="countries">
+                            <option value="Ukraine">Ukraine</option>
+                            <option value="Poland">Poland</option>
+                            <option value="Norway">Norway</option>
+                        </datalist>
+                    </div>
+
+                    <!-- City -->
+
+                    <div class="delivery-info__city">
+                        <input type="text" list="cities" name="cities" placeholder="City" required>
+                        <datalist id="cities">
+                            <option value="Kiev">Kiev</option>
+                            <option value="Cracow">Cracow</option>
+                            <option value="Olso">Olso</option>
+                        </datalist>
+                    </div>
+
+                    <!-- Adress -->
+
+                    <div class="delivery-info__adress">
+                        <input type="text" placeholder="Adress" title="Adress" required>
+                    </div>
+
+                    <!-- Button -->
+
+                    <div class="personal-info__button">
+                        <button type="button" class="personal-info__button-previous" data="per-info">Previous</button>
+                        <button type="button" class="personal-info__button-next" data="pay-info">Next</button>
+                    </div>
+                </form>
+
+                <!-- Payment Information -->
+
+                <form action="" class="registration-form" id="pay-info">
+                    <h1><strong>Payment</strong>Information</h1>
+                    <p>Please enter your information and proceed to the next step so we can build your accounts</p>
+
+                    <!-- Icons -->
+
+                    <div class="payment-info__icons">
+                        <i class="fa fa-cc-mastercard"></i>
+                        <i class="fa fa-cc-visa"></i>
+                        <i class="fa fa-cc-paypal"></i>
+                        <i class="fa fa-google-wallet"></i>
+                    </div>
+
+                    <!-- Name on card -->
+
+                    <div class="payment-info__cname">
+                        <label for="cname">Name On Card</label>
+                        <input type="text" id="cname" name="cardname" placeholder="Brooklyn O'Brien" required>
+                    </div>
+
+                    <!-- Credit card number and CVV -->
+
+                    <div class="payment-info__ccnum-cvv">
+                        <div class="payment-info__ccnum">
+                            <label for="ccnum">Credit Card Number</label>
+                            <input type="text" id="ccnum" name="cardnumber" placeholder="XXXXXXXXXXXXXXXX"
+                                pattern="[0-9]{16}" required>
+                        </div>
+                        <div class="payment-info__cvv">
+                            <label for="cvv">CVV</label>
+                            <input type="text" id="cvv" name="cvv" placeholder="352" pattern="[0-9]{3}" required>
+                        </div>
+
+                    </div>
+
+                    <!-- Expiry date -->
+
+                    <div class="payment-info__expiry-date">
+                        <div class="payment-info__expiry-month">
+                            <label for="expmonth">Exp Month</label>
+                            <input type="text" list="month" id="expmonth" name="expmonth" placeholder="10"
+                                pattern="[0-9]{2}" required>
+                            <datalist id="month">
+                                <option value="01">01</option>
+                                <option value="02">02</option>
+                                <option value="03">03</option>
+                                <option value="04">04</option>
+                                <option value="05">05</option>
+                                <option value="06">06</option>
+                                <option value="07">07</option>
+                                <option value="08">08</option>
+                                <option value="09">09</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                            </datalist>
+                        </div>
+                        <div class="payment-info__expiry-year">
+                            <label for="extyear">Exp Year</label>
+                            <input type="text" list="year" id="expyear" name="expmonth" placeholder="2019"
+                                pattern="[0-9]{4}" required>
+                            <datalist id="year">
+                                <option value="2019">2019</option>
+                                <option value="2020">2020</option>
+                                <option value="2021">2021</option>
+                                <option value="2022">2022</option>
+                                <option value="2023">2023</option>
+                                <option value="2024">2024</option>
+                                <option value="2025">2025</option>
+                                <option value="2026">2026</option>
+                                <option value="2027">2027</option>
+                                <option value="2028">2028</option>
+                                <option value="2029">2029</option>
+                            </datalist>
+                        </div>
+                    </div>
+
+                    <!-- Button -->
+
+                    <div class="personal-info__button">
+                        <button type="button" class="personal-info__button-previous" data="del-info">Previous</button>
+                        <button type="submit" class="personal-info__button-submit">Submit</button>
+                    </div>
+                </form>
+            </aside>
+
+                    <!-- Hamburger button -->
+
+            <aside class="hamburger">
+                <div class="hamburger-button">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </aside>
+        </section>
+    </div>
+</body>
+
+</html>

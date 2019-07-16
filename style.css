@@ -1,0 +1,331 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    background: url('https://wallpaperaccess.com/full/557716.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+h1 {
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+h2 {
+    font-size: 1.2rem;
+    text-align: center;
+    padding: 2rem;
+    border-bottom: 1px solid #fff;
+    cursor: pointer;
+    color: #fff;
+    transition: all 0.3s ease;
+}
+
+h2:hover {
+    background: #125151;
+}
+
+p {
+    text-align: center;
+}
+
+strong {
+    padding: 0.5rem;
+    color: #fff;
+    background: teal;
+}
+
+/* .error {
+    border-color: red;
+}
+
+.okay {
+    border-color: rgb(13, 218, 13);
+} */
+
+.grid-container .grid-container-left {
+    grid-area: grid-container-left;
+}
+
+.grid-container .grid-container-right {
+    grid-area: grid-container-right;
+}
+
+.grid-container .hamburger {
+    grid-area: hamburger;
+}
+
+#lig-in-none {
+    display: none;
+}
+
+#log-in {
+    display: block;
+    margin-top: 20%;
+    margin-left: 45%;
+    width: 5rem;
+    height: 2.5rem;
+    cursor: pointer;
+    background: ghostwhite;
+    border: 0;
+    font-size: 1rem;
+}
+
+.center {
+    display: none;
+    justify-content: center;
+    margin-top: 5%;
+}
+
+.grid-container {
+    width: 50rem;
+    display: grid;
+    grid-template-columns: 1fr 2fr 0.2fr;
+    grid-template-areas: "grid-container-left grid-container-right hamburger";
+}
+
+.grid-container-left {
+    background: teal;
+}
+
+.grid-container-right {
+    background: ghostwhite;
+}
+
+.hamburger-button {
+    position: relative;
+    transition: .5s ease-in-out;
+    cursor: pointer;
+}
+
+span {
+    display: block;
+    width: 35px;
+    height: 6px;
+    background: ghostwhite;
+    margin-left: 5px;
+    position: absolute;
+    opacity: 1;
+    transition: .25s ease-in-out;
+    transform-origin: left center;
+}
+
+span:nth-child(1) {
+    top: 0px;
+}
+
+span:nth-child(2) {
+    top: 10px;
+}
+
+span:nth-child(3) {
+    top: 20px;
+}
+
+.open span:nth-child(1) {
+    transform: rotate(45deg);
+    top: 0px;
+}
+
+.open span:nth-child(2) {
+    opacity: 0;
+}
+
+.open span:nth-child(3) {
+    transform: rotate(-45deg);
+    top: 24px;
+}
+
+input {
+    padding: 1rem;
+    border: 1px solid teal;
+    font-size: 1rem;
+    width: 100%;
+}
+
+label {
+    margin-bottom: 0.5rem;
+}
+
+.margin-right {
+    margin-right: 0.5rem;
+}
+
+/* Personal Information */
+
+.registration-form {
+    display: none;
+    grid-gap: 2rem;
+    ;
+    padding: 1.5rem;
+}
+
+.registration-form.registration-form-open {
+    display: grid;
+}
+
+.personal-info__name-and-surname {
+    display: flex;
+    flex-direction: row;
+}
+
+.personal-info__email {
+    display: flex;
+    flex-direction: column;
+}
+
+.personal-info__bday {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+}
+
+.personal-info__password {
+    display: flex;
+    flex-direction: row;
+    grid-gap: 1rem;
+}
+
+.personal-info__button {
+    display: grid;
+    justify-content: end;
+    grid-auto-flow: column;
+    grid-gap: 0.5rem;
+}
+
+.personal-info__button-submit,
+.personal-info__button-previous,
+.personal-info__button-next {
+    width: 5rem;
+    height: 2.5rem;
+    cursor: pointer;
+    background: teal;
+    color: #fff;
+    border: 0;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.personal-info__button-submit:hover,
+.personal-info__button-previous:hover,
+.personal-info__button-next:hover {
+    background: #125151;
+}
+
+/* Delivery Information */
+
+.delivery-info__phone,
+.delivery-info__country,
+.delivery-info__city,
+.delivery-info__adress {
+    display: grid;
+}
+
+.delivery-info__phone {
+    display: grid;
+}
+
+/* Payment Information */
+
+.payment-info__icons {
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: start;
+    grid-gap: 1rem;
+    font-size: 2.5rem;
+}
+
+.fa-cc-mastercard {
+    color: red;
+}
+
+.fa-cc-visa {
+    color: darkblue;
+}
+
+.fa-cc-paypal {
+    color: blue;
+}
+
+.fa-google-wallet {
+    color: orange;
+}
+
+.payment-info__cname {
+    display: flex;
+    flex-direction: column;
+}
+
+.payment-info__ccnum-cvv,
+.payment-info__ccnum {
+    display: flex;
+    flex-direction: row;
+}
+
+.payment-info__ccnum {
+    flex: 5;
+    display: flex;
+    flex-direction: column;
+    margin-right: 0.5rem;
+}
+
+.payment-info__cvv {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.payment-info__expiry-date {
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: start;
+}
+
+.payment-info__expiry-day,
+.payment-info__expiry-month {
+    width: 6rem;
+    display: flex;
+    flex-direction: column;
+    margin-right: 0.5rem;
+}
+
+.payment-info__expiry-year {
+    width: 6rem;
+    display: flex;
+    flex-direction: column;
+}
+
+@media screen and (max-width: 500px) {
+    .center {
+        margin-top: 0;
+    }
+
+    .grid-container {
+        grid-template-columns: 1fr;
+        grid-template-areas: "grid-container-left"
+            "grid-container-right";
+    }
+
+    .grid-container-left {
+        display: none;
+    }
+
+    h1 {
+        background: teal;
+        padding: 1rem;
+        color: #fff
+    }
+
+}
