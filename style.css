@@ -322,6 +322,10 @@ label {
         display: none;
     }
 
+    .hamburger {
+        display: none;
+    }
+
     h1 {
         background: teal;
         padding: 1rem;
